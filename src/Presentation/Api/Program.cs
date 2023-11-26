@@ -12,6 +12,7 @@ using Mapster;
 using Microsoft.AspNetCore.HttpLogging;
 using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 using Serilog;
 using Serilog.Events;
 using Serilog.Formatting.Compact;
@@ -40,7 +41,13 @@ namespace Api
 
 				// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 				builder.Services.AddEndpointsApiExplorer();
-				builder.Services.AddSwaggerGen();
+				builder.Services.AddSwaggerGen(gen =>
+				{
+					gen.SwaggerDoc("V1", new OpenApiInfo
+					{
+						Description = "Cinema Theater API to manage theaters"
+					});
+				});
 
 				builder.Services.AddTransient<IMovieTheaterService, MovieTheaterService>();
 				builder.Services.RegisterDataServices(builder.Configuration);
@@ -51,10 +58,7 @@ namespace Api
 				if (app.Environment.IsDevelopment())
 				{
 					app.UseSwagger();
-					app.UseSwaggerUI(options =>
-					{
-						options.DocumentTitle = "Cinema Theater API";
-					});
+					app.UseSwaggerUI();
 				}
 
 				app.UseMiddleware<ErrorLoggerMiddleware>();
