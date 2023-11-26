@@ -51,7 +51,10 @@ namespace Api
 				if (app.Environment.IsDevelopment())
 				{
 					app.UseSwagger();
-					app.UseSwaggerUI();
+					app.UseSwaggerUI(options =>
+					{
+						options.DocumentTitle = "Cinema Theater API";
+					});
 				}
 
 				app.UseMiddleware<ErrorLoggerMiddleware>();
