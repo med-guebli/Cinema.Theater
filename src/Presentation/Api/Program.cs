@@ -28,25 +28,10 @@ namespace Api
 				
 				builder.Host.UseSerilog((ctx, config) => config.ReadFrom.Configuration(ctx.Configuration));
 
-				var debugView = builder.Configuration.GetDebugView();
-
 				var logger = new LoggerConfiguration()
 							.ReadFrom
 							.Configuration(builder.Configuration)
 							.CreateBootstrapLogger();
-
-				logger.ForContext("debug view", debugView)
-					.Information("The debug view");
-
-				//var connectionString = builder.Configuration.GetConnectionString("MongoDbConnection");
-				//var simpleProperty = builder.Configuration.GetValue<string>("SimpleProperty");
-				//var nestedProperty = builder.Configuration.GetValue<string>("Inventory:NestedProperty");
-
-				//logger
-				//	.ForContext(nameof(connectionString), connectionString)
-				//	.ForContext(nameof(simpleProperty), simpleProperty)
-				//	.ForContext(nameof(nestedProperty), nestedProperty)
-				//	.Information("Loading configurations !", connectionString);
 
 				// Add services to the container.
 
@@ -81,6 +66,7 @@ namespace Api
 				});
 
 				app.Run();
+				throw new Exception();
 			}
 			catch (Exception ex)
 			{
