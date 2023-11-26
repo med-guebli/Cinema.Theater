@@ -9,18 +9,9 @@ namespace Api.Controllers
 	[Route("ping")]
 	public class PingController : ControllerBase
 	{
-		private readonly IMovieTheaterRepository movieTheater;
-
-		public PingController(IMovieTheaterRepository movieTheater)
-        {
-			this.movieTheater = movieTheater;
-		}
-
         [HttpGet]
 		public IActionResult Ping()
 		{
-			movieTheater.Multi();
-
 			return Ok();
 		}
 	}
