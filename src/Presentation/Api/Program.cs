@@ -66,7 +66,6 @@ namespace Api
 				});
 
 				app.Run();
-				throw new Exception();
 			}
 			catch (Exception ex)
 			{
