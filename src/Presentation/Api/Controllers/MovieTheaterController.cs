@@ -26,6 +26,7 @@ namespace Api.Controllers
 		[HttpGet]
         public async Task<PagedResultDto<MovieTheaterDto>> FindAll(MovieTheaterSearchFilterDto searchFilter, string? ok)
         {
+			throw new InvalidOperationException("This is an invalid operation exception :'D !");
 			return await _movieTheaterService.FindAllAsync(searchFilter);
 		}
 
