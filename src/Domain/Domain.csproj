@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <RootNamespace>Cinema.Theater.Domain</RootNamespace>
+        <AssemblyName>Cinema.Theater.Domain</AssemblyName>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MediatR" Version="12.0.1" />
+      <PackageReference Include="MongoDB.Bson" Version="2.21.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Enums\" />
+      <Folder Include="Exceptions\" />
+      <Folder Include="ValueObjects\" />
+    </ItemGroup>
+
+</Project>
