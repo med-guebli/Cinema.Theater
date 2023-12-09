@@ -26,7 +26,7 @@ namespace Api
 			try
 			{
 				var builder = WebApplication.CreateBuilder(args);
-				
+
 				builder.Host.UseSerilog((ctx, config) => config.ReadFrom.Configuration(ctx.Configuration));
 
 				var logger = new LoggerConfiguration()
@@ -41,30 +41,40 @@ namespace Api
 
 				// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 				builder.Services.AddEndpointsApiExplorer();
-				builder.Services.AddSwaggerGen(gen =>
-				{
-					gen.SwaggerDoc("V1", new OpenApiInfo
-					{
-						Description = "Cinema Theater API to manage theaters"
-					});
-				});
+				builder.Services.AddSwaggerGen();
 
 				builder.Services.AddTransient<IMovieTheaterService, MovieTheaterService>();
 				builder.Services.RegisterDataServices(builder.Configuration);
 
+				builder.Services.AddCors(opt =>
+				{
+					opt.AddPolicy("web-app", builder =>
+					{
+						builder
+							.WithOrigins("http://localhost:4200")
+							.AllowAnyHeader()
+							.AllowAnyMethod();
+					});
+				});
+
 				var app = builder.Build();
+
 
 				// Configure the HTTP request pipeline.
 				if (app.Environment.IsDevelopment())
 				{
 					app.UseSwagger();
-					app.UseSwaggerUI();
+					app.UseSwaggerUI((options) =>
+					{
+						options.SwaggerEndpoint("v1/swagger.json", "V1");
+					});
 				}
 
 				app.UseMiddleware<ErrorLoggerMiddleware>();
-				
+
 				app.UseRouting();
 				app.UseHttpsRedirection();
+				app.UseCors("web-app");
 				app.UseAuthorization();
 
 				app.UseEndpoints((config) =>
