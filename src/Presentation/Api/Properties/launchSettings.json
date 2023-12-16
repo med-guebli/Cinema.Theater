@@ -40,7 +40,7 @@
       "httpPort": 51803,
       "useSSL": true,
       "sslPort": 44360,
-      "DockerfileRunArguments": "--network=cinema-theater-network"
+      "DockerfileRunArguments": "--network=cinema"
     }
   },
   "$schema": "https://json.schemastore.org/launchsettings.json",
