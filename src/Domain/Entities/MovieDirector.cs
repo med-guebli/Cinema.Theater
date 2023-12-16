@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Cinema.Domain.Entities
 {
-	public interface ISearchScore
+	public record MovieDirector
 	{
-		double? SearchScore { get; init; }
+		public required string Firstname { get; init; }
+		public required string Lastname { get; init; }
 	}
 }

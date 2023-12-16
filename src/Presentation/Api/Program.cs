@@ -1,9 +1,9 @@
 
 using Api.Middlewares;
 using Api.Validators;
-using Cinema.Theater.Application.Interfaces.Repositories;
-using Cinema.Theater.Application.Interfaces.Services;
-using Cinema.Theater.Application.Services;
+using Cinema.Application.Interfaces.Repositories;
+using Cinema.Application.Interfaces.Services;
+using Cinema.Application.Services;
 using Data;
 using Data.Configurations;
 using DnsClient;
@@ -43,7 +43,8 @@ namespace Api
 				builder.Services.AddEndpointsApiExplorer();
 				builder.Services.AddSwaggerGen();
 
-				builder.Services.AddTransient<IMovieTheaterService, MovieTheaterService>();
+				builder.Services.AddTransient<ITheaterService, TheaterService>();
+				builder.Services.AddTransient<IMovieService, MovieService>();
 				builder.Services.RegisterDataServices(builder.Configuration);
 
 				builder.Services.AddCors(opt =>

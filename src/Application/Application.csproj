@@ -2,8 +2,8 @@
 
     <PropertyGroup>
         <TargetFramework>net7.0</TargetFramework>
-        <RootNamespace>Cinema.Theater.Application</RootNamespace>
-        <AssemblyName>Cinema.Theater.Application</AssemblyName>
+        <RootNamespace>Cinema.Application</RootNamespace>
+        <AssemblyName>Cinema.Application</AssemblyName>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
     </PropertyGroup>

@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Cinema.Application.Dtos.SearchFilters
 {
-	public record TextSearchFilterDto : Pagination
+	public record MovieSearchFilterDto : Pagination
 	{
-		public required string Search { get; init; }
+		public string? Name { get; set; }
 	}
 }

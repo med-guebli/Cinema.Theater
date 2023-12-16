@@ -1,8 +1,8 @@
 ﻿using AutoFixture;
-using Cinema.Theater.Application.Dtos;
-using Cinema.Theater.Application.Dtos.SearchFilters;
-using Cinema.Theater.Application.Interfaces.Repositories;
-using Cinema.Theater.Domain.Entities;
+using Cinema.Application.Dtos;
+using Cinema.Application.Dtos.SearchFilters;
+using Cinema.Application.Interfaces.Repositories;
+using Cinema.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using MongoDB.Bson;
@@ -18,13 +18,13 @@ using System.Threading.Tasks;
 
 namespace Data
 {
-    public class TheaterRepositoryBase<TEntity> : ITheaterRepositoryBase<TEntity> where TEntity : class, IAuditableEntity
+    public class CinemaRepositoryBase<TEntity> : IRepositoryBase<TEntity> where TEntity : class, IAuditableEntity
 	{
 		private readonly IMongoClient _client;
 		protected readonly IMongoDatabase Database;
 		protected readonly IMongoCollection<TEntity> Collection;
 
-		public TheaterRepositoryBase(
+		public CinemaRepositoryBase(
 			IMongoClient mongoClient,
 			string databaseName,
 			string collectionName
@@ -49,7 +49,7 @@ namespace Data
 			return (int)deletion.DeletedCount;
 		}
 
-		public async Task<IEnumerable<TEntity>> FindManyAsync(int pageNumber, int pageSize)
+		public async Task<IEnumerable<TEntity>> FindAsync(int pageNumber, int pageSize)
 		{
 			return await Collection
 					.Find(_ => true)

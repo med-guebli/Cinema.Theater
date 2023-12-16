@@ -1,9 +1,9 @@
 ﻿using Api.Validators;
-using Cinema.Theater.Application.Dtos.MovieTheater;
-using Cinema.Theater.Application.Dtos.SearchFilters;
-using Cinema.Theater.Application.Interfaces.Repositories;
+using Cinema.Application.Dtos.Theater;
+using Cinema.Application.Dtos.SearchFilters;
+using Cinema.Application.Interfaces.Repositories;
 using Data.Configuration;
-using Data.Repositories.MovieTheaterRepository;
+using Data.Repositories;
 using FluentValidation;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -25,7 +25,8 @@ namespace Data.Configurations
 				var options = configuration.GetRequiredSection(ConnectionStringsConfiguration.ConnectionStrings).Get<ConnectionStringsConfiguration>();
 				return new MongoClient(options!.MongoDbConnection);
 			});
-			services.AddScoped<IMovieTheaterRepository, MovieTheaterRepository>();
+			services.AddScoped<ITheaterRepository, TheaterRepository>();
+			services.AddScoped<IMovieRepository, MovieRepository>();
 
 			return services;
 		}

@@ -2,8 +2,8 @@
 
     <PropertyGroup>
         <TargetFramework>net7.0</TargetFramework>
-        <RootNamespace>Cinema.Theater.Domain</RootNamespace>
-        <AssemblyName>Cinema.Theater.Domain</AssemblyName>
+        <RootNamespace>Cinema.Domain</RootNamespace>
+        <AssemblyName>Cinema.Domain</AssemblyName>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
     </PropertyGroup>
@@ -14,7 +14,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Enums\" />
       <Folder Include="Exceptions\" />
       <Folder Include="ValueObjects\" />
     </ItemGroup>

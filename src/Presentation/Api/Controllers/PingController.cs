@@ -1,5 +1,5 @@
-﻿using Cinema.Theater.Application.Interfaces.Repositories;
-using Cinema.Theater.Domain.Entities;
+﻿using Cinema.Application.Interfaces.Repositories;
+using Cinema.Domain.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Serilog;

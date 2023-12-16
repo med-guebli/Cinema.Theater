@@ -1,4 +1,4 @@
-﻿using Cinema.Theater.Application.Dtos.Address;
+﻿using Cinema.Application.Dtos.Address;
 using FluentValidation;
 
 namespace Api.Validators

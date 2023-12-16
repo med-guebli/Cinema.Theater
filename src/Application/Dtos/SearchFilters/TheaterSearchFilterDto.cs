@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cinema.Theater.Application.Dtos.SearchFilters
+namespace Cinema.Application.Dtos.SearchFilters
 {
-    public record MovieTheaterSearchFilterDto : Pagination
+    public record TheaterSearchFilterDto : Pagination
     {
         public string? Name { get; set; }
     }

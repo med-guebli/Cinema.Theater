@@ -1,5 +1,5 @@
-﻿using Cinema.Theater.Application.Dtos;
-using Cinema.Theater.Domain.Entities;
+﻿using Cinema.Application.Dtos;
+using Cinema.Domain.Entities;
 using Mapster;
 using System;
 using System.Collections.Generic;
@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cinema.Theater.Application.Mapping
+namespace Cinema.Application.Mapping
 {
-	public class MovieTheaterConfig : IRegister
+	public class TheaterConfig : IRegister
 	{
 		public void Register(TypeAdapterConfig config)
 		{

@@ -4,10 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cinema.Domain.Entities
+namespace Cinema.Domain.Enums
 {
-	public interface ISearchScore
+	public enum MovieCategory
 	{
-		double? SearchScore { get; init; }
+		Adventure,
+		Action,
+		SF,
+		War,
+		Romance,
+		Drame,
 	}
 }

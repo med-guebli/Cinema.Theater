@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cinema.Theater.Application.Dtos
+namespace Cinema.Application.Dtos
 {
 	public record PagedResultDto<TEntity> where TEntity : class
 	{

@@ -1,4 +1,4 @@
-﻿namespace Cinema.Theater.Domain.Entities
+﻿namespace Cinema.Domain.Entities
 {
     public interface IAuditableEntity
     {

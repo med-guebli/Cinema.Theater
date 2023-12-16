@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Cinema.Theater.Application.Dtos.Address;
+using Cinema.Application.Dtos.Address;
 
-namespace Cinema.Theater.Application.Dtos.MovieTheater
+namespace Cinema.Application.Dtos.Theater
 {
-    public class MovieTheaterForUpdateDto
+    public class TheaterForUpdateDto
 	{
 		public required string Name { get; init; }
 

@@ -1,11 +1,11 @@
-﻿using Cinema.Theater.Application.Dtos.MovieTheater;
+﻿using Cinema.Application.Dtos.Theater;
 using FluentValidation;
 
 namespace Api.Validators
 {
-	public class MovieTheaterForCreationDtoValidator : AbstractValidator<MovieTheaterForCreationDto>
+	public class TheaterForCreationDtoValidator : AbstractValidator<TheaterForCreationDto>
 	{
-        public MovieTheaterForCreationDtoValidator()
+        public TheaterForCreationDtoValidator()
         {
             RuleFor(mt => mt.Name).NotEmpty().MinimumLength(5).MaximumLength(100).WithMessage("The name must have length caracters between 5 and 100");
         }

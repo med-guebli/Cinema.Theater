@@ -1,4 +1,4 @@
-﻿using Cinema.Theater.Application.Dtos.SearchFilters;
+﻿using Cinema.Application.Dtos.SearchFilters;
 using FluentValidation;
 
 namespace Api.Validators

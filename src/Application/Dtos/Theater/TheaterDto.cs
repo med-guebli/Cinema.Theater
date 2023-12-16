@@ -1,8 +1,8 @@
-﻿using Cinema.Theater.Application.Dtos.Address;
+﻿using Cinema.Application.Dtos.Address;
 
-namespace Cinema.Theater.Application.Dtos.MovieTheater
+namespace Cinema.Application.Dtos.Theater
 {
-    public record MovieTheaterDto
+    public record TheaterDto
 	{
 		public Guid Id { get; init; }
 

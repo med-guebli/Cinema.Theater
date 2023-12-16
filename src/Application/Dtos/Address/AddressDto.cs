@@ -1,4 +1,4 @@
-﻿namespace Cinema.Theater.Application.Dtos.Address
+﻿namespace Cinema.Application.Dtos.Address
 {
     public record AddressDto
 	{
