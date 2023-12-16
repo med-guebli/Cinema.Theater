@@ -41,4 +41,4 @@ jobs:
         with:
           file: ./src/Presentation/Api/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/cinema.theater:latest, ${{ secrets.DOCKERHUB_USERNAME }}/cinema.theater:${{ github.run_number }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/mg.cinema:latest, ${{ secrets.DOCKERHUB_USERNAME }}/mg.cinema:${{ github.run_number }}
