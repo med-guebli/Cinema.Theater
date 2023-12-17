@@ -57,5 +57,11 @@ namespace Api.Controllers
 		{
 			return Ok(await _movieService.UpdateAsync(id, Movie));
 		}
+
+		[HttpGet("lol")]
+		public IActionResult Lol()
+		{
+			return Ok("Lol");
+		}
 	}
 }
